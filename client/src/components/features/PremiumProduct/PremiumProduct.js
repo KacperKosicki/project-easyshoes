@@ -1,4 +1,4 @@
-// PremiumProductList.js
+// PremiumProduct.js
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const PremiumProduct = () => {
   const [premiumProducts, setPremiumProducts] = useState([]);
-  
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,6 +26,7 @@ const PremiumProduct = () => {
     <div className={styles.productList}>
       {premiumProducts.map((product) => (
         <div key={product._id} className={styles.productCard}>
+          <div className={styles.premiumBadge}>PREMIUM</div>
           <img src={product.image} alt={product.title} className={styles.productImage} />
           <h2 className={styles.productTitle}>{product.title}</h2>
           {product.gender && <p className={styles.productGender}>{product.gender}</p>}

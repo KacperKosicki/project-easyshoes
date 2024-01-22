@@ -133,5 +133,45 @@
       "gender": "Buty męskie",
       "price": 599.99,
       "image": "/images/puma/slipstreamsuede.webp"
+    },
+    {
+      "id": 10,
+      "title": "Air Force 1 Mid x Off-White™ White and Varsity Maize",
+      "gender": "Buty męskie",
+      "price": 899.99,
+      "image": "/images/nike/nikeairforcemid1.jpg",
+      "carouselImages": ["/images/nike/nikeairforcemid1-1.jpg", "/images/nike/nikeairforcemid1-2.jpg", "/images/nike/nikeairforcemid1-3.jpg"],
+      "sizeChart": {
+        "EU": [
+          { "size": "40", "available": true },
+          { "size": "41", "available": true },
+          { "size": "42", "available": false },
+          { "size": "43", "available": false },
+          { "size": "44", "available": false },
+          { "size": "45", "available": true },
+          { "size": "46", "available": true }
+        ]
+      },
+      "premium": true
+    },
+    {
+      "id": 11,
+      "title": "Air More Uptempo Low x AMBUSH Lilac and Apple Green",
+      "gender": "Buty męskie",
+      "price": 1029.99,
+      "image": "/images/nike/nikeairmore.jpg",
+      "carouselImages": ["/images/nike/nikeairmore1.jpg", "/images/nike/nikeairmore2.jpg", "/images/nike/nikeairmore3.jpg"],
+      "sizeChart": {
+        "EU": [
+          { "size": "40", "available": true },
+          { "size": "41", "available": false },
+          { "size": "42", "available": false },
+          { "size": "43", "available": false },
+          { "size": "44", "available": false },
+          { "size": "45", "available": false },
+          { "size": "46", "available": true }
+        ]
+      },
+      "premium": true
     }
   ]
