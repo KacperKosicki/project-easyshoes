@@ -1,15 +1,27 @@
 // ProductList.js
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './ProductList.module.scss';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import Notification from '../Notification/Notification';
 
 const ProductList = () => {
+  const dispatch = useDispatch();
+
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortType, setSortType] = useState('default');
   const [filterType, setFilterType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationMessage, setNotificationMessage] = useState('');
+
+  const closeNotification = () => {
+    setShowNotification(false);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,18 +37,16 @@ const ProductList = () => {
   }, []);
 
   useEffect(() => {
-    // Filtruj produkty
     let filtered = [...products];
 
     if (filterType) {
-      filtered = filtered.filter(product => product.gender.toLowerCase().includes(filterType.toLowerCase()));
+      filtered = filtered.filter(product => product.gender && product.gender.toLowerCase().includes(filterType.toLowerCase()));
     }
 
     if (searchTerm) {
       filtered = filtered.filter(product => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
-    // Sortuj produkty
     switch (sortType) {
       case 'priceAsc':
         filtered.sort((a, b) => a.price - b.price);
@@ -47,6 +57,9 @@ const ProductList = () => {
       default:
         break;
     }
+
+    // Filtrowanie produktów premium tylko w sekcji PremiumProduct
+    filtered = filtered.filter(product => !product.premium);
 
     setFilteredProducts(filtered);
   }, [sortType, filterType, searchTerm, products]);
@@ -65,6 +78,8 @@ const ProductList = () => {
 
   return (
     <div>
+      <Notification show={showNotification} handleClose={closeNotification} message={notificationMessage} />
+
       <div className={styles.filters}>
         <div className={styles.filterGroup}>
           <label>
@@ -92,13 +107,9 @@ const ProductList = () => {
       <div className={styles.productList}>
         {filteredProducts.map((product) => (
           <div key={product._id} className={styles.productCard}>
-            <img
-              src={product.image}
-              alt={product.title}
-              className={styles.productImage}
-            />
+            <img src={product.image} alt={product.title} className={styles.productImage} />
             <h2 className={styles.productTitle}>{product.title}</h2>
-            <p className={styles.productDescription}>{product.gender}</p>
+            {product.gender && <p className={styles.productGender}>{product.gender}</p>}
             <p className={styles.productPrice}>{product.price}zł</p>
             <Link to={`/product/${product._id}`} className={styles.seeProduct}>
               ZOBACZ PRODUKT

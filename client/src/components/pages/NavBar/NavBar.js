@@ -2,16 +2,21 @@
 
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaShoppingCart } from 'react-icons/fa'; // Importuj ikonę koszyka
-import { useSelector } from 'react-redux'; // Importuj useSelector z Redux
+import { FaShoppingCart } from 'react-icons/fa';
+import { useSelector, useDispatch } from 'react-redux';
+//import { CLEAR_CART } from '../../../redux/productRedux'; // Popraw ścieżkę do pliku z akcjami Redux
 import styles from './NavBar.module.scss';
 
 const NavBar = () => {
-  // Użyj useSelector do pobrania danych o koszyku ze stanu Redux
-  const cartItems = useSelector(state => state.cartItems);
+  const cartItems = useSelector((state) => state.cartItems);
+  const dispatch = useDispatch();
 
-  // Oblicz całkowitą ilość produktów w koszyku
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+
+  /*const handleCartClick = () => {
+    // Przejdź do strony koszyka i oczyść koszyk po kliknięciu
+    dispatch({ type: CLEAR_CART });
+  };*/
 
   return (
     <nav className={styles.navbar}>
@@ -26,7 +31,6 @@ const NavBar = () => {
             Produkty
           </NavLink>
         </li>
-        {/* Dodaj ikonę koszyka i informację o ilości produktów w koszyku */}
         <li className={styles.navItem}>
           <NavLink to="/cart" activeClassName={styles.activeLink}>
             <FaShoppingCart />
@@ -39,3 +43,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+

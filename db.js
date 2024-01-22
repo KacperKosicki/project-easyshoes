@@ -44,7 +44,21 @@ const db = {
       title: "Nike Air Force 1 '07",
       description: "Buty męskie",
       price: 629.99,
-      image: "/images/nike/nikeairforce107.webp"
+      image: "/images/nike/nikeairforce107.webp",
+      carouselImages: ["/images/nike/nikeairforce107-1.webp", "/images/nike/nikeairforce107-2.webp", "/images/nike/nikeairforce107-3.webp"],
+      sizeChart: {
+        EU: [
+          { "size": "38", "available": true },
+          { "size": "39", "available": true },
+          { "size": "40", "available": true },
+          { "size": "41", "available": false },
+          { "size": "42", "available": false },
+          { "size": "43", "available": false },
+          { "size": "44", "available": false },
+          { "size": "45", "available": true },
+          { "size": "46", "available": true }
+        ]
+      }
     },
     {
       id: 4,

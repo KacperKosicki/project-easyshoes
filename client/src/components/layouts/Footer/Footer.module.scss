@@ -18,13 +18,70 @@
   gap: 20px;
   margin-bottom: 10px;
 }
-  
+
 .socialIcons a {
   color: #fff;
   font-size: 24px;
   text-decoration: none;
 }
-  
+
 .socialIcons a:hover {
   color: #ddd;
+}
+
+.footerSections {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.footerSection {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 10px;
+}
+
+.footerSection h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerSection ul li {
+  margin-bottom: 8px;
+}
+
+.footerSection ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footerSection ul li a:hover {
+  color: #fff;
+}
+
+.footerSection p {
+  color: #ddd;
+  font-size: 14px;
+}
+
+.footerSection ul li.comingSoon {
+  pointer-events: none; /* Blokowanie interakcji dla elementów z tą klasą */
+}
+
+.footerSection ul li.comingSoon:hover {
+  cursor: not-allowed; /* Zmiana kształtu kursora na "not allowed" po najechaniu */
+}
+
+.footerSection .comingSoon {
+  color: gray; /* Kolor czerwony */
+  font-size: 14px;
+  margin-left: 5px;
 }

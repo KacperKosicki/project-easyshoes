@@ -16,13 +16,23 @@
     display: block;
     margin: 0 auto;
     border: 1px solid #ddd; // Dodatkowy obramowanie
-    border-radius: 8px; // Zaokrąglone narożniki
+    border-radius: 10px; // Zaokrąglone narożniki
     object-fit: cover; // Skalowanie obrazu, aby wypełnić kontener, zachowując proporcje
   }
 
   .productPrice {
     font-weight: bold;
     color: #27ae60;
+    font-size: 30px;
+  }
+
+  .productTitle {
+    font-size: 25px;
+  }
+
+  h3,
+  .availableSizes {
+    font-size: 30px;
   }
   
   .sizeChart {
@@ -41,7 +51,7 @@
     padding: 10px;
     color: black;
     border: 1px solid black;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -63,9 +73,13 @@
     background-color: #28a745;
     color: #fff;
     border: 1px solid #28a745;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 500;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2);
+    }
   }
   
   .orderButton:disabled {
@@ -84,4 +98,22 @@
   .sizeButton:disabled {
     opacity: 0.7;
   }
+
+.addToCartButton {
+  background-color: transparent;
+  color: #000;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 10px;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #4caf50;
+    color: black;
+  }
+}
   

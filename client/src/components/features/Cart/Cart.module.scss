@@ -1,0 +1,226 @@
+/* Cart.module.scss */
+
+.cartContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cartHeader {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.emptyCartMessage {
+  font-style: italic;
+  color: #888;
+}
+
+.cartList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style dla produktów w koszyku */
+.cartItem {
+  padding: 10px;
+  margin-bottom: 10px;
+  flex: 0 0 30%; /* Ustawienie szerokości elementu na około 30%, aby zmieścić trzy produkty w jednym wierszu */
+  box-sizing: border-box; /* Dostosowanie do modelu pudełkowego */
+}
+
+.itemTitle {
+  font-size: 10px;
+}
+
+.itemQuantity {
+  margin-left: 10px;
+  color: #555;
+}
+
+.itemTotalPrice {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.itemTitle {
+  font-size: 20px;
+}
+
+.itemImage {
+  width: 100%;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  object-fit: cover;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.seeProduct {
+  width: 100%;
+  background-color: transparent;
+  color: #000;
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #4caf50;
+    color: black;
+  }
+}
+
+/* Style dla produktów w koszyku */
+.cartItemsInCart {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cartItemInCart {
+  padding: 10px;
+  margin-bottom: 10px;
+  flex: 0 0 calc(33.3333% - 20px); /* Ustawienie szerokości na około 33.33% minus marginesy */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; // Dodano justify-content
+  height: 100%; // Nowy styl
+}
+
+.itemControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; // Dodano justify-content
+  margin-top: 10px;
+  width: 100%; // Nowy styl
+  text-align: center; // Dodano text-align
+}
+
+.quantityAddButton {
+  background-color: transparent;
+  width: 120px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-weight: 500;
+  margin: 0 5px;
+  display: inline-flex; /* Ustaw na inline-flex */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #4caf50;
+    color: green;
+  }
+}
+
+.quantityDeleteButton {
+  background-color: transparent;
+  width: 120px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-weight: 500;
+  margin: 0 5px;
+  display: inline-flex; /* Ustaw na inline-flex */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: transparent;
+    border-color: lightcoral;
+    color: red;
+  }
+}
+
+
+.quantityButtonContainer {
+  display: flex;
+}
+
+.removeButton {
+  width: 100%;
+  background-color: transparent;
+  color: #000;
+  padding: 8px 16px;
+  border: 1px solid #ddd; // Bardziej cienkie obramowanie
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+
+  &:hover {
+    background-color: transparent;
+    border-color: lightcoral; // Jasny zielony kolor obramowania po najechaniu myszką
+    color: red; // Czarny kolor po najechaniu myszką
+  }
+}
+
+.separator {
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.summaryAndOrder {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.totalSummary {
+  text-align: right;
+  margin-right: 15px;
+}
+
+.orderButton {
+  background-color: #28a745;
+  color: #fff;
+  border: 1px solid #28a745;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+  margin-left: 15px;
+}
+
+.totalValueQuantity {
+  color: black;
+  font-weight: bold;
+}
+
+.totalValuePrice {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.suggestionsHeader {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}

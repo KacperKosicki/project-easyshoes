@@ -40,14 +40,12 @@
   color: #ddd; /* Zmiana koloru linku podczas najechania myszką */
 }
 
-/* Dodaj nowy styl dla licznika produktów w koszyku */
 .cartItemCount {
   background-color: #e74c3c;
   color: #fff;
   border-radius: 50%;
-  padding: 4px 8px;
+  padding: 3px 8px;
   font-size: 12px;
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 2px;
 }

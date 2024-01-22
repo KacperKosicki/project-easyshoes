@@ -3,17 +3,19 @@
 import React from 'react';
 import ProductList from '../../features/ProductList/ProductList';
 import WelcomeSection from '../../features/WelcomeSection/WelcomeSection';
-import styles from './Home.module.scss'; // Import stylów dla strony Home
+import styles from './Home.module.scss';
+import PremiumProduct from '../../features/PremiumProduct/PremiumProduct';
 
 const Home = () => {
   return (
     <div className={styles.homeContainer}>
       <WelcomeSection />
-      <h1 className={styles.heading}>Nasze produkty:</h1>
+      <img src="/images/produkty-easyshoes.png" alt="Banner" width="100%" height="auto" />
       <div className={styles.productsContainer}>
-        {/* Dodaj treść strony głównej, np. karuzelę, oferty, itp. */}
         <ProductList />
       </div>
+      <img src="/images/produkty-easyshoes.png" alt="Banner" width="100%" height="auto" />
+      <PremiumProduct />
     </div>
   );
 };

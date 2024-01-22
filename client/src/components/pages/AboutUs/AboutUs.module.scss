@@ -1,0 +1,59 @@
+// AboutUs.module.scss
+
+.aboutUsContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .aboutUsHeading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .aboutUsContent {
+    display: flex;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+  }
+  
+  .aboutUsText {
+    flex: 1;
+    margin-right: 20px;
+  
+    p {
+      margin-bottom: 15px;
+    }
+  
+    strong {
+      font-weight: bold;
+    }
+  }
+  
+  .aboutUsImageContainer {
+    max-width: 300px;
+  }
+  
+  .aboutUsImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Media Query - dostosuj do własnych potrzeb
+  @media (max-width: 600px) {
+    .aboutUsContent {
+      flex-direction: column;
+    }
+  
+    .aboutUsText,
+    .aboutUsImageContainer {
+      margin-right: 0;
+    }
+  }
