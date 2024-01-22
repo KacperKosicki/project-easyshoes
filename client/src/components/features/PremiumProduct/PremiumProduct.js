@@ -1,5 +1,4 @@
 // PremiumProduct.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './PremiumProduct.module.scss';
@@ -26,7 +25,12 @@ const PremiumProduct = () => {
     <div className={styles.productList}>
       {premiumProducts.map((product) => (
         <div key={product._id} className={styles.productCard}>
-          <div className={styles.premiumBadge}>PREMIUM</div>
+          <div className={`${styles.premiumBadge} ${styles.available}`}>PREMIUM</div>
+          {product.available ? (
+            <div className={`${styles.availableBadge} ${styles.available}`}>DOSTĘPNE</div>
+          ) : (
+            <div className={`${styles.availableBadge} ${styles.unavailable}`}>NIEDOSTĘPNE</div>
+          )}
           <img src={product.image} alt={product.title} className={styles.productImage} />
           <h2 className={styles.productTitle}>{product.title}</h2>
           {product.gender && <p className={styles.productGender}>{product.gender}</p>}

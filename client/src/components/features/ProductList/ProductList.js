@@ -1,5 +1,4 @@
 // ProductList.js
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './ProductList.module.scss';
@@ -79,7 +78,7 @@ const ProductList = () => {
   return (
     <div>
       <Notification show={showNotification} handleClose={closeNotification} message={notificationMessage} />
-
+  
       <div className={styles.filters}>
         <div className={styles.filterGroup}>
           <label>
@@ -94,19 +93,35 @@ const ProductList = () => {
         <div className={styles.filterGroup}>
           <label>
             <span className={styles.filterLabel}>Płeć:</span>
-            <input type="text" value={filterType} onChange={handleFilterChange} />
+            <input
+              type="text"
+              value={filterType}
+              onChange={handleFilterChange}
+              placeholder="Wpisz daną płeć"
+            />
           </label>
         </div>
         <div className={styles.filterGroup}>
           <label>
             <span className={styles.filterLabel}>Marka:</span>
-            <input type="text" value={searchTerm} onChange={handleSearchChange} />
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              placeholder="Wpisz nazwę produktu"
+            />
           </label>
         </div>
       </div>
       <div className={styles.productList}>
         {filteredProducts.map((product) => (
           <div key={product._id} className={styles.productCard}>
+            {product.premium && <div className={`${styles.premiumBadge} ${styles.available}`}>PREMIUM</div>}
+            {product.available ? (
+              <div className={`${styles.availableBadge} ${styles.available}`}>DOSTĘPNE</div>
+            ) : (
+              <div className={`${styles.availableBadge} ${styles.unavailable}`}>NIEDOSTĘPNE</div>
+            )}
             <img src={product.image} alt={product.title} className={styles.productImage} />
             <h2 className={styles.productTitle}>{product.title}</h2>
             {product.gender && <p className={styles.productGender}>{product.gender}</p>}
