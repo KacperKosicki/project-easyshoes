@@ -9,14 +9,8 @@ import styles from './NavBar.module.scss';
 
 const NavBar = () => {
   const cartItems = useSelector((state) => state.cartItems);
-  const dispatch = useDispatch();
 
   const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
-
-  /*const handleCartClick = () => {
-    // Przejdź do strony koszyka i oczyść koszyk po kliknięciu
-    dispatch({ type: CLEAR_CART });
-  };*/
 
   return (
     <nav className={styles.navbar}>
@@ -29,6 +23,11 @@ const NavBar = () => {
         <li className={styles.navItem}>
           <NavLink to="/products" activeClassName={styles.activeLink}>
             Produkty
+          </NavLink>
+        </li>
+        <li className={styles.navItem}>
+          <NavLink to="/premium" activeClassName={styles.activeLink}>
+            Premium
           </NavLink>
         </li>
         <li className={styles.navItem}>

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const PremiumProduct = () => {
   const [premiumProducts, setPremiumProducts] = useState([]);
-
+  
   useEffect(() => {
     const fetchData = async () => {
       try {

@@ -85,9 +85,9 @@ const ProductList = () => {
           <label>
             <span className={styles.filterLabel}>Cena:</span>
             <select value={sortType} onChange={handleSortChange}>
-              <option value="default">Domyślne</option>
-              <option value="priceAsc">Cena rosnąco</option>
-              <option value="priceDesc">Cena malejąco</option>
+              <option value="default">Domyślna</option>
+              <option value="priceAsc">Rosnąco</option>
+              <option value="priceDesc">Malejąco</option>
             </select>
           </label>
         </div>
