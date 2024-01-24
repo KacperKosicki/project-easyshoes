@@ -1,10 +1,12 @@
 // ProductList.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import styles from './ProductList.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Notification from '../Notification/Notification';
+import cx from 'classnames'; // Dodane importowane cx
+
+import styles from './ProductList.module.scss'; // Dodane importowane stylów
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -15,6 +17,7 @@ const ProductList = () => {
   const [filterType, setFilterType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
+  const navigate = useNavigate();
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
 
@@ -75,10 +78,19 @@ const ProductList = () => {
     setSearchTerm(e.target.value);
   };
 
+  const handleProductClick = (product) => {
+    if (product.available) {
+      navigate(`/product/${product._id}`);
+    } else {
+      setShowNotification(true);
+      setNotificationMessage('Produkt jest niedostępny.');
+    }
+  };
+
   return (
     <div>
       <Notification show={showNotification} handleClose={closeNotification} message={notificationMessage} />
-  
+
       <div className={styles.filters}>
         <div className={styles.filterGroup}>
           <label>
@@ -115,7 +127,7 @@ const ProductList = () => {
       </div>
       <div className={styles.productList}>
         {filteredProducts.map((product) => (
-          <div key={product._id} className={styles.productCard}>
+          <div key={product._id} className={styles.productCard} onClick={() => handleProductClick(product)}>
             {product.premium && <div className={`${styles.premiumBadge} ${styles.available}`}>PREMIUM</div>}
             {product.available ? (
               <div className={`${styles.availableBadge} ${styles.available}`}>DOSTĘPNE</div>
@@ -126,8 +138,11 @@ const ProductList = () => {
             <h2 className={styles.productTitle}>{product.title}</h2>
             {product.gender && <p className={styles.productGender}>{product.gender}</p>}
             <p className={styles.productPrice}>{product.price}zł</p>
-            <Link to={`/product/${product._id}`} className={styles.seeProduct}>
-              ZOBACZ PRODUKT
+            <Link
+              to={`/product/${product._id}`}
+              className={cx(styles.seeProduct, { [styles.disabled]: !product.available })}
+            >
+              {product.available ? 'ZOBACZ PRODUKT' : 'PRODUKT NIEDOSTĘPNY'}
             </Link>
           </div>
         ))}

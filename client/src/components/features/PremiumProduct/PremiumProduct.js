@@ -1,11 +1,13 @@
 // PremiumProduct.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './PremiumProduct.module.scss';
-import { Link } from 'react-router-dom';
+import cx from 'classnames'; // Dodane importowane cx
 
 const PremiumProduct = () => {
   const [premiumProducts, setPremiumProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,7 +26,7 @@ const PremiumProduct = () => {
   return (
     <div className={styles.productList}>
       {premiumProducts.map((product) => (
-        <div key={product._id} className={styles.productCard}>
+        <div key={product._id} className={styles.productCard} onClick={() => product.available && navigate(`/product/${product._id}`)}>
           <div className={`${styles.premiumBadge} ${styles.available}`}>PREMIUM</div>
           {product.available ? (
             <div className={`${styles.availableBadge} ${styles.available}`}>DOSTĘPNE</div>
@@ -35,8 +37,11 @@ const PremiumProduct = () => {
           <h2 className={styles.productTitle}>{product.title}</h2>
           {product.gender && <p className={styles.productGender}>{product.gender}</p>}
           <p className={styles.productPrice}>{product.price}zł</p>
-          <Link to={`/product/${product._id}`} className={styles.seeProduct}>
-            ZOBACZ PRODUKT
+          <Link
+            to={`/product/${product._id}`}
+            className={cx(styles.seeProduct, { [styles.disabled]: !product.available })}
+          >
+            {product.available ? 'ZOBACZ PRODUKT' : 'PRODUKT NIEDOSTĘPNY'}
           </Link>
         </div>
       ))}
