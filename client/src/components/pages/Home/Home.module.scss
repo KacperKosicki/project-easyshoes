@@ -1,21 +1,25 @@
 /* Home.module.scss */
 
 .homeContainer {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .heading {
-    font-family: 'Arial', sans-serif; /* Wybierz odpowiednią czcionkę */
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333; /* Kolor tekstu */
-  }
-  
-  .productsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-  }
+  text-align: center;
+  padding: 20px;
+}
+
+.roundedImage {
+  border-radius: 10px;
+}
+
+.heading {
+  font-family: 'Arial', sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.productsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
