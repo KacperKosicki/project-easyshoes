@@ -64,13 +64,13 @@
   
   .sizeButton.selected {
     border-radius: 10px;
-    border: 3px solid #158b31;
+    border: 3px solid #28a745;
   }
   
   .orderButton {
     margin-top: 20px;
     padding: 10px;
-    background-color: #28a745;
+    background-color: #4caf50;
     color: #fff;
     border: 1px solid #28a745;
     border-radius: 10px;
@@ -101,19 +101,21 @@
 
 .addToCartButton {
   background-color: transparent;
-  color: #000;
+  color: green;
   padding: 10px;
-  border: 1px solid #ddd;
   border-radius: 10px;
   cursor: pointer;
+  text-decoration: none;
   font-weight: 500;
+  border: 1px solid #ddd;
   display: inline-block;
   margin-left: 10px;
+  border-color: #28a745;
+  transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: transparent;
-    border-color: #4caf50;
-    color: black;
+    background-color: #4caf50;
+    color: white;
   }
 }
   

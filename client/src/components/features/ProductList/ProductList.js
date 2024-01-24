@@ -88,7 +88,7 @@ const ProductList = () => {
   };
 
   return (
-    <div>
+    <div className={styles.mainContainer}>
       <Notification show={showNotification} handleClose={closeNotification} message={notificationMessage} />
 
       <div className={styles.filters}>

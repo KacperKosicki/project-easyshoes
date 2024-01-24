@@ -129,7 +129,7 @@
 
   &:hover {
     background-color: transparent;
-    border-color: #4caf50;
+    border-color: #28a745;
     color: green;
   }
 }
@@ -174,8 +174,8 @@
 
   &:hover {
     background-color: transparent;
-    border-color: lightcoral; // Jasny zielony kolor obramowania po najechaniu myszką
-    color: red; // Czarny kolor po najechaniu myszką
+    border-color: lightcoral;
+    color: red;
   }
 }
 
@@ -199,14 +199,24 @@
 }
 
 .orderButton {
-  background-color: #28a745;
-  color: #fff;
-  border: 1px solid #28a745;
+  width: 100%;
+  color: green;
+  background-color: transparent;
+  border: 1px solid #ddd;
   border-radius: 10px;
   cursor: pointer;
-  font-weight: bold;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-block;
+  border-color: #28a745;
+  transition: background-color 0.3s, color 0.3s; 
   padding: 10px;
   margin-left: 15px;
+
+  &:hover {
+    background-color: #4caf50;
+    color: white;
+  }
 }
 
 .totalValueQuantity {
