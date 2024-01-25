@@ -10,11 +10,11 @@ const Home = () => {
   return (
     <div className={styles.homeContainer}>
       <WelcomeSection />
-      <img className={styles.roundedImage} src="/images/produkty-easyshoes.png" alt="Banner" width="100%" height="auto" />
+      <img className={styles.roundedImage} src="/images/inne/produkty-easyshoes.png" alt="Banner" width="100%" height="auto" />
       <div className={styles.productsContainer}>
         <ProductList />
       </div>
-      <img className={styles.roundedImage} src="/images/banner-premium.png" alt="Banner" width="100%" height="auto" />
+      <img className={styles.roundedImage} src="/images/inne/banner-premium.png" alt="Banner" width="100%" height="auto" />
       <PremiumProduct />
     </div>
   );
