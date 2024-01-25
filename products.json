@@ -15,7 +15,7 @@
           { "size": "39", "available": true }
         ]
       },
-      "available": true
+      "available": false
     },
     {
       "id": 2,
@@ -78,7 +78,7 @@
           { "size": "41", "available": false }
         ]
       },
-      "available": true
+      "available": false
     },
     {
       "id": 5,
@@ -133,7 +133,7 @@
       "gender": "Buty damskie",
       "price": 669.99,
       "image": "/images/puma/pumaxfenty.webp",
-      "available": true
+      "available": false
     },
     {
       "id": 9,
@@ -182,7 +182,7 @@
           { "size": "46", "available": true }
         ]
       },
-      "available": true,
+      "available": false,
       "premium": true
     },
     {
@@ -203,7 +203,7 @@
           { "size": "46", "available": false }
         ]
       },
-      "available": true,
+      "available": false,
       "premium": true
     }
   ]
