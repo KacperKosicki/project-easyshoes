@@ -1,5 +1,3 @@
-// Cart.js
-
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './Cart.module.scss'; // Importuj style
@@ -125,25 +123,13 @@ const Cart = () => {
             </div>
             <div className={styles.summaryAndOrder}>
               <div className={styles.totalSummary}>
-              <button
-                className={styles.orderButton}
-                disabled={isCartEmpty}
-                onClick={() => {
-                  console.log('Zamówienie złożone!');
-                  console.log('Szczegóły zamówienia:');
-                  cartItems.forEach((item) => {
-                    console.log(
-                      `Produkt: ${item.title}, Ilość: ${item.quantity}, Cena: ${(item.price * item.quantity).toFixed(2)} zł`
-                    );
-                    if (selectedSize) {
-                      console.log(`Rozmiar: ${selectedSize}`);
-                    }
-                  });
-                  console.log(`Łączna ilość sztuk: ${totalQuantity}, Łączna cena: ${totalPrice.toFixed(2)} zł`);
-                }}
-              >
-              {cartItems.length > 1 ? 'ZAKUP TE PRODUKTY' : 'ZAKUP TEN PRODUKT'}
-            </button>
+                <Link
+                  to="/finally-order"
+                  className={styles.orderButton}
+                  disabled={isCartEmpty}
+                >
+                  {cartItems.length > 1 ? 'ZAKUP TE PRODUKTY' : 'ZAKUP TEN PRODUKT'}
+                </Link>
               </div>
               <div className={styles.totalSummary}>
                 <p>

@@ -1,15 +1,18 @@
-// PremiumProduct.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import Notification from '../Notification/Notification'; // Dodany import Notification
-import styles from './PremiumProduct.module.scss';
+import Notification from '../Notification/Notification';
+import styles from './PremiumProduct.module.scss'; // Używamy stylów z ProductList
 import cx from 'classnames';
 
 const PremiumProduct = () => {
   const [premiumProducts, setPremiumProducts] = useState([]);
-  const navigate = useNavigate();
+  const [filteredPremiumProducts, setFilteredPremiumProducts] = useState([]);
+  const [sortType, setSortType] = useState('default');
+  const [filterType, setFilterType] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
 
+  const navigate = useNavigate();
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
 
@@ -19,6 +22,7 @@ const PremiumProduct = () => {
         const response = await axios.get('http://localhost:8000/api/products');
         const premiumProducts = response.data.filter(product => product.premium);
         setPremiumProducts(premiumProducts);
+        setFilteredPremiumProducts(premiumProducts);
       } catch (error) {
         console.error('Error fetching premium products data:', error);
       }
@@ -27,8 +31,45 @@ const PremiumProduct = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    let filtered = [...premiumProducts];
+
+    if (filterType) {
+      filtered = filtered.filter(product => product.gender && product.gender.toLowerCase().includes(filterType.toLowerCase()));
+    }
+
+    if (searchTerm) {
+      filtered = filtered.filter(product => product.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    }
+
+    switch (sortType) {
+      case 'priceAsc':
+        filtered.sort((a, b) => a.price - b.price);
+        break;
+      case 'priceDesc':
+        filtered.sort((a, b) => b.price - a.price);
+        break;
+      default:
+        break;
+    }
+
+    setFilteredPremiumProducts(filtered);
+  }, [sortType, filterType, searchTerm, premiumProducts]);
+
   const closeNotification = () => {
     setShowNotification(false);
+  };
+
+  const handleSortChange = (e) => {
+    setSortType(e.target.value);
+  };
+
+  const handleFilterChange = (e) => {
+    setFilterType(e.target.value);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
   };
 
   const handleProductClick = (product) => {
@@ -44,17 +85,50 @@ const PremiumProduct = () => {
     <div className={styles.mainContainer}>
       <Notification show={showNotification} handleClose={closeNotification} message={notificationMessage} />
 
+      <div className={styles.filters}>
+        <div className={styles.filterGroup}>
+          <label>
+            <span className={styles.filterLabel}>Cena:</span>
+            <select value={sortType} onChange={handleSortChange}>
+              <option value="default">Domyślna</option>
+              <option value="priceAsc">Rosnąco</option>
+              <option value="priceDesc">Malejąco</option>
+            </select>
+          </label>
+        </div>
+        <div className={styles.filterGroup}>
+          <label>
+            <span className={styles.filterLabel}>Płeć:</span>
+            <input
+              type="text"
+              value={filterType}
+              onChange={handleFilterChange}
+              placeholder="Wpisz daną płeć"
+            />
+          </label>
+        </div>
+        <div className={styles.filterGroup}>
+          <label>
+            <span className={styles.filterLabel}>Marka:</span>
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              placeholder="Wpisz nazwę produktu"
+            />
+          </label>
+        </div>
+      </div>
+
       <div className={styles.productList}>
-        {premiumProducts.map((product) => (
+        {filteredPremiumProducts.map((product) => (
           <div key={product._id} className={styles.productCard} onClick={() => handleProductClick(product)}>
-            <div className={styles.badgeContainer}>
-              <div className={`${styles.premiumBadge} ${styles.available}`}>PREMIUM</div>
-              {product.available ? (
-                <div className={`${styles.availableBadge} ${styles.available}`}>DOSTĘPNE</div>
-              ) : (
-                <div className={`${styles.availableBadge} ${styles.unavailable}`}>NIEDOSTĘPNE</div>
-              )}
-            </div>
+            <div className={styles.premiumBadge}>PREMIUM</div>
+            {product.available ? (
+              <div className={`${styles.availableBadge} ${styles.available}`}>DOSTĘPNE</div>
+            ) : (
+              <div className={`${styles.availableBadge} ${styles.unavailable}`}>NIEDOSTĘPNE</div>
+            )}
             <img src={product.image} alt={product.title} className={styles.productImage} />
             <h2 className={styles.productTitle}>{product.title}</h2>
             {product.gender && <p className={styles.productGender}>{product.gender}</p>}

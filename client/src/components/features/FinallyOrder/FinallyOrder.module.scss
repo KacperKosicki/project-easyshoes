@@ -1,0 +1,79 @@
+// FinallyOrder.module.scss
+
+.finallyOrderContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .orderSummary {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Rozciąga elementy wzdłuż osi krótszej */
+    gap: 10px; /* Odstęp między elementami */
+  }
+  
+  .orderSummary h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .orderSummary ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .orderSummary li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #666;
+  }
+
+  .submitOrder {
+    text-align: center;
+  }
+  
+  .orderButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .orderButton:hover {
+    background-color: #0056b3;
+  }
+
+  .cartItem {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    list-style-type: none;
+  }
+  
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .productTitle {
+    font-weight: bold;
+  }
+  
+  .productQuantity,
+  .productPrice,
+  .productSize {
+    margin-top: 5px;
+  }

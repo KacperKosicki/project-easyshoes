@@ -116,6 +116,16 @@ input {
     font-size: 20px;
   }
 
+  .originalPrice {
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 5px;
+  }
+
+  .salePrice {
+    color: #e74c3c;
+  }
+
   .seeProduct {
     width: 100%;
     background-color: transparent;
@@ -129,7 +139,7 @@ input {
     display: inline-block;
     margin-top: 10px;
     border-color: #28a745;
-    transition: background-color 0.3s, color 0.3s; // Dodane przejścia dla koloru tła i tekstu
+    transition: background-color 0.3s, color 0.3s;
 
     &:hover {
       background-color: #4caf50;

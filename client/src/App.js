@@ -10,6 +10,7 @@ import Cart from './components/features/Cart/Cart';
 import Statute from './components/pages/Statue/Statue';
 import AboutUs from './components/pages/AboutUs/AboutUs';
 import PremiumProduct from './components/features/PremiumProduct/PremiumProduct';
+import FinallyOrder from './components/features/FinallyOrder/FinallyOrder';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/product-list" element={<ProductList />} />
         <Route path="/premium" element={<PremiumProduct />} />
+        <Route path="/finally-order" element={<FinallyOrder />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/products" element={<ProductList />} />
         <Route path="/cart" element={<Cart />} />
