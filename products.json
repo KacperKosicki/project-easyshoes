@@ -145,7 +145,7 @@
     },
     {
       "id": 10,
-      "title": "Air Force 1 Mid x Off-White™ White and Varsity Maize",
+      "title": "Nike Air Force 1 Mid x Off-White™ White and Varsity Maize",
       "gender": "Buty męskie",
       "price": 899.99,
       "image": "/images/nike/nikeairforcemid1.jpg",
@@ -166,7 +166,7 @@
     },
     {
       "id": 11,
-      "title": "Air More Uptempo Low x AMBUSH Lilac and Apple Green",
+      "title": "Nike Air More Uptempo Low x AMBUSH Lilac and Apple Green",
       "gender": "Buty męskie",
       "price": 1029.99,
       "image": "/images/nike/nikeairmore.jpg",
@@ -180,6 +180,27 @@
           { "size": "44", "available": false },
           { "size": "45", "available": false },
           { "size": "46", "available": true }
+        ]
+      },
+      "available": true,
+      "premium": true
+    },
+    {
+      "id": 12,
+      "title": "Nike Air Force 1 Experimental",
+      "gender": "Buty męskie",
+      "price": 679.99,
+      "image": "/images/nike/nikeairforceexperimental.webp",
+      "carouselImages": ["/images/nike/nikeairforceexperimental1.webp", "/images/nike/nikeairforceexperimental2.webp", "/images/nike/nikeairforceexperimental3.webp"],
+      "sizeChart": {
+        "EU": [
+          { "size": "40", "available": false },
+          { "size": "41", "available": false },
+          { "size": "42", "available": false },
+          { "size": "43", "available": true },
+          { "size": "44", "available": true },
+          { "size": "45", "available": true },
+          { "size": "46", "available": false }
         ]
       },
       "available": true,
