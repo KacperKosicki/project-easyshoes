@@ -18,12 +18,20 @@ const Cart = () => {
       try {
         const response = await fetch('http://localhost:8000/api/products');
         const data = await response.json();
-        setRandomProducts(data.sort(() => 0.5 - Math.random()).slice(0, 3));
+        // Filtruj produkty, aby wyłączyć te niedostępne
+        const availableProducts = data.filter(product => product.available);
+        // Jeśli nie ma żadnych dostępnych produktów, zwróć pustą tablicę
+        if (availableProducts.length === 0) {
+          setRandomProducts([]);
+        } else {
+          // Jeśli są dostępne produkty, wybierz losowe
+          setRandomProducts(availableProducts.sort(() => 0.5 - Math.random()).slice(0, 3));
+        }
       } catch (error) {
         console.error('Error fetching random products:', error);
       }
     };
-
+  
     if (isCartEmpty) {
       fetchData();
     }
