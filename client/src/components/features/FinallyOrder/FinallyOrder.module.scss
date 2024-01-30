@@ -38,23 +38,27 @@
   .submitOrder {
     text-align: center;
   }
-  
-  .orderButton {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .orderButton:hover {
-    background-color: #0056b3;
-  }
 
+  .orderButton {
+    color: green;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    border-color: #28a745;
+    transition: background-color 0.3s, color 0.3s; 
+    padding: 10px;
+
+    &:hover {
+      background-color: #4caf50;
+      color: white;
+    }
+  }
+  
   .cartItem {
     border: 1px solid #ccc;
     border-radius: 10px;

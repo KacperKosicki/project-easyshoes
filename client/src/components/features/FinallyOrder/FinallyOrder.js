@@ -1,3 +1,5 @@
+// FinallyOrder.js
+
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -65,7 +67,7 @@ const FinallyOrder = () => {
           </li>
         ))}
       </ul>
-      <button className={styles.orderButton} onClick={handleOrderButtonClick}>Złóż zamówienie</button>
+      <button className={styles.orderButton} onClick={handleOrderButtonClick}>ZŁÓŻ ZAMÓWIENIE</button>
   
       {/* Modal */}
       {showModal && (

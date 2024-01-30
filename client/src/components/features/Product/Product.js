@@ -128,15 +128,6 @@ const Product = () => {
       </div>
 
       <button
-        className={styles.orderButton}
-        disabled={!selectedSize}
-        onClick={() => {
-          console.log(`Wybrany rozmiar: ${selectedSize}`);
-        }}
-      >
-        ZAMÓW TEN PRODUKT
-      </button>
-      <button
         className={styles.addToCartButton}
         onClick={handleAddToCart}
       >

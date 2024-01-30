@@ -1,3 +1,5 @@
+// server.js
+
 const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
@@ -10,7 +12,7 @@ const io = socketIO(server);
 
 // routes
 const productsRoutes = require('./routes/products.routes');
-const ordersRoutes = require('./routes/orders.routes')(io); // Przekazujemy io do tras zamówień
+const ordersRoutes = require('./routes/orders.routes')(io);
 
 app.use(express.json());
 const port = process.env.PORT || 8000;
@@ -36,12 +38,12 @@ io.on('connection', (socket) => {
   });
 });
 
-// Dodaj trasy
+// Trasy
 app.use('/api', productsRoutes);
-app.use('/api/orders', ordersRoutes); // Tutaj używamy '/api/orders', a nie '/api', a także przekazujemy io
+app.use('/api/orders', ordersRoutes);
 
 app.use((req, res, next) => {
-    req.io = io; // Dodaj referencję do obiektu io do obiektu req
+    req.io = io;
     next();
   });
 
