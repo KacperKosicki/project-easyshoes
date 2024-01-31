@@ -3,6 +3,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const http = require('http');
+const path = require('path');
 const socketIO = require('socket.io');
 const cors = require('cors');
 
@@ -43,9 +44,16 @@ app.use('/api', productsRoutes);
 app.use('/api/orders', ordersRoutes);
 
 app.use((req, res, next) => {
-    req.io = io;
-    next();
-  });
+  req.io = io;
+  next();
+});
+
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, '/client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build/index.html'));
+});
 
 io.on('connection', (socket) => {
     console.log('New socket!');
