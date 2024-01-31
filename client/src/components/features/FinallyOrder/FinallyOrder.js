@@ -66,10 +66,10 @@ const FinallyOrder = () => {
         {cartItems.map((item) => (
           <li key={item.id} className={styles.cartItem}>
             <div className={styles.productInfo}>
-              <div className={styles.productTitle}>Produkt: {item.title}</div>
-              <div className={styles.productQuantity}>Ilość: {item.quantity}</div>
-              <div className={styles.productPrice}>Cena: {(item.price * item.quantity).toFixed(2)} zł</div>
-              {selectedSize && <div className={styles.productSize}>Rozmiar: {selectedSize}</div>}
+              <div className={styles.productTitle}>Produkt: <span>{item.title}</span></div>
+              <div className={styles.productQuantity}>Ilość: <span>{item.quantity}</span></div>
+              <div className={styles.productPrice}>Cena: <span>{(item.price * item.quantity).toFixed(2)} zł</span></div>
+              {selectedSize && <div className={styles.productSize}>Rozmiar: <span>{selectedSize}</span></div>}
             </div>
           </li>
         ))}
