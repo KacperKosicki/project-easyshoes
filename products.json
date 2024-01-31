@@ -129,10 +129,21 @@
     },
     {
       "id": 8,
-      "title": "FENTY x PUMA Creeper Phatty",
-      "gender": "Buty damskie",
+      "title": " Puma FENTY x PUMA Creeper Phatty",
+      "gender": "Buty męskie",
       "price": 669.99,
       "image": "/images/puma/pumaxfenty.webp",
+      "carouselImages": ["/images/puma/pumaxfenty1.webp", "/images/puma/pumaxfenty2.webp", "/images/puma/pumaxfenty3.webp"],
+      "sizeChart": {
+        "EU": [
+          { "size": "36", "available": false },
+          { "size": "37", "available": false },
+          { "size": "38", "available": true },
+          { "size": "39", "available": true },
+          { "size": "40", "available": false },
+          { "size": "41", "available": true }
+        ]
+      },
       "available": false
     },
     {
@@ -141,6 +152,17 @@
       "gender": "Buty męskie",
       "price": 599.99,
       "image": "/images/puma/slipstreamsuede.webp",
+      "carouselImages": ["/images/puma/slipstreamsuede1.webp", "/images/puma/slipstreamsuede2.webp", "/images/puma/slipstreamsuede3.webp"],
+      "sizeChart": {
+        "EU": [
+          { "size": "36", "available": true },
+          { "size": "37", "available": false },
+          { "size": "38", "available": false },
+          { "size": "39", "available": true },
+          { "size": "40", "available": false },
+          { "size": "41", "available": false }
+        ]
+      },
       "available": true
     },
     {
