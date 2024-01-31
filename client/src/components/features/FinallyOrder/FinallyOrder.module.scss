@@ -100,3 +100,26 @@
   border-radius: 5px; // Zaokrąglij krawędzie, aby uzyskać kwadratowy kształt
   padding: 3px 8px; // Zwiększ wewnętrzny odstęp dla ikony
 }
+
+// Media
+@media only screen and (max-width: 768px) {
+  .finallyOrderContainer {
+    padding: 0 20px;
+  }
+
+  .orderButton {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .modal {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-dialog {
+    max-width: 80%;
+  }
+}

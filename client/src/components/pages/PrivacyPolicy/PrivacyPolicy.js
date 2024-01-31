@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
           nisi dui hendrerit lectus, sit amet vehicula tortor justo sit amet arcu. Nam pellentesque, mi a dapibus
           laoreet, elit odio fringilla nulla, ac fermentum leo metus et arcu.
         </p>
-        {/* Dodaj więcej informacji na temat polityki prywatności */}
+        <p className={styles.footerNote}>Przykładowa treść stworzona przez ChatGPT</p>
       </div>
     </div>
   );

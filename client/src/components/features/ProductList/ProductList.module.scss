@@ -1,4 +1,4 @@
-// ProductList.module.scss
+/* ProductList.module.scss */
 
 .mainContainer {
   text-align: center;
@@ -153,5 +153,28 @@ input {
       opacity: 0.6;
       pointer-events: none;
     }
+  }
+}
+
+// Media
+@media only screen and (max-width: 768px) {
+  .mainContainer {
+    padding: 10px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filterGroup {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  select,
+  input {
+    width: 100%;
+    margin-left: 0;
   }
 }

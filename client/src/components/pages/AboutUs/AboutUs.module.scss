@@ -45,15 +45,27 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-  
-// Media Query - dostosuj do własnych potrzeb
+
+.footerNote {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+// Media
 @media (max-width: 600px) {
   .aboutUsContent {
     flex-direction: column;
+    align-items: center;
   }
   
   .aboutUsText,
   .aboutUsImageContainer {
     margin-right: 0;
+  }
+
+  .aboutUsImageContainer {
+    margin-top: 20px;
   }
 }

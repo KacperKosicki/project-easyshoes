@@ -13,7 +13,7 @@ const Statute = () => {
 
         <h3>1. Postanowienia Ogólne</h3>
         <p>
-          1.1. Niniejszy regulamin określa zasady korzystania ze Sklepu Internetowego z Butami.
+          1.1. Niniejszy regulamin określa zasady korzystania ze sklepu EASYSHOES.PL.
         </p>
 
         <p>
@@ -22,15 +22,11 @@ const Statute = () => {
 
         <h3>2. Zamówienia</h3>
         <p>
-          2.1. Składanie zamówień w Sklepie Internetowym jest możliwe po zalogowaniu się na konto użytkownika lub jako gość.
+          2.1. Zamówienia można składać za pomocą formularza dostępnego na stronie internetowej sklepu.
         </p>
 
         <p>
-          2.2. Zamówienia można składać za pomocą formularza dostępnego na stronie internetowej Sklepu.
-        </p>
-
-        <p>
-          2.3. Po złożeniu zamówienia Klient otrzyma potwierdzenie na podany adres e-mail.
+          2.2. Po złożeniu zamówienia Klient otrzyma potwierdzenie na podany adres e-mail.
         </p>
 
         <h3>8. Postanowienia Końcowe</h3>
@@ -41,6 +37,7 @@ const Statute = () => {
         <p>
           8.2. W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy prawa polskiego.
         </p>
+        <p className={styles.footerNote}>Przykładowa treść stworzona przez ChatGPT</p>
       </div>
     </div>
   );

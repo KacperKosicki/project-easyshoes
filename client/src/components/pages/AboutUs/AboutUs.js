@@ -34,6 +34,7 @@ const AboutUs = () => {
         Dołącz do naszej społeczności i odkryj świat oryginalnych butów dostosowanych do najnowszych trendów.
         easyshoes.pl to nie tylko sklep, to miejsce, w którym styl łączy się z nowoczesnością.
       </p>
+      <p className={styles.footerNote}>Przykładowa treść stworzona przez ChatGPT</p>
     </div>
   );
 };

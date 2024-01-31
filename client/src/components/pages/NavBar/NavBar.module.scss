@@ -48,3 +48,24 @@
   position: absolute;
   top: 2px;
 }
+
+// Media
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 8px;
+  }
+
+  .navList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navItem {
+    padding: 5px 0;
+  }
+
+  .cartItemCount {
+    top: unset;
+    margin-left: 5px;
+  }
+}

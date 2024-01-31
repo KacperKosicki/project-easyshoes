@@ -85,3 +85,16 @@
   font-size: 14px;
   margin-left: 5px;
 }
+
+// Media
+@media only screen and (max-width: 768px) {
+  .footerSections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerSection {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+}
