@@ -88,3 +88,15 @@
   margin-top: 5px;
   font-weight: bold;
 }
+
+.customHeader {
+  text-align: center;
+}
+
+.customClose {
+  color: red; // Ustaw biały kolor dla ikony "X"
+  border: 1px solid lightcoral; // Dodaj obramowanie dla ikony "X"
+  background-color: white; // Ustaw kolor tła dla ikony "X"
+  border-radius: 5px; // Zaokrąglij krawędzie, aby uzyskać kwadratowy kształt
+  padding: 3px 8px; // Zwiększ wewnętrzny odstęp dla ikony
+}
