@@ -117,9 +117,9 @@ const Cart = () => {
                       <div className={styles.itemControls}>
                         <span className={styles.itemTitle}>{item.title}</span>
                         <p>
-                          <span className={styles.itemQuantity}>{item.quantity} szt.</span> -
-                          <span className={styles.itemTotalPrice}> {(item.price * item.quantity).toFixed(2)} zł</span>
-                          {selectedSize && <span className={styles.itemSize}> - Rozmiar: {selectedSize}</span>}
+                          <span className={styles.itemQuantity}>{item.quantity}</span> szt. -
+                          <span className={styles.itemTotalPrice}> {(item.price * item.quantity).toFixed(2)}</span> zł - 
+                          {selectedSize && <span className={styles.itemSize}> Rozmiar: {selectedSize}</span>}
                         </p>
                       </div>
                     </div>

@@ -49,10 +49,10 @@ const Footer = () => {
           </p>
         </div>
         <div className={styles.footerSection}>
-          <h3>Akcesoria</h3>
+          <h3>Sklep</h3>
           <ul>
             <li>
-              <a href="/products">Buty</a>
+              <a href="/">Produkty</a>
             </li>
             <li className={styles.comingSoon}>
               <a href="/kategorie/akcesoria">Akcesoria</a> <span className={styles.comingSoonText}>Już niedługo...</span>
