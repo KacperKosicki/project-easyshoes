@@ -18,28 +18,34 @@ const ordersRoutes = require('./routes/orders.routes')(io);
 app.use(express.json());
 const port = process.env.PORT || 8000;
 
-// Połączenie z bazą danych
+// Connection to the database
 mongoose.connect('mongodb://localhost:27017/products', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
-app.use(cors());
 
-db.on('error', console.error.bind(console, 'Błąd połączenia z MongoDB:'));
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
-  console.log('Połączono z bazą danych MongoDB!');
+  console.log('Connected to MongoDB database!');
 });
 
-// Nasłuchiwanie na połączenie Socket.IO
+// CORS configuration
+const corsOptions = {
+  origin: '*' // allow requests from any origin, you may want to change this to your domain
+};
+
+app.use(cors(corsOptions));
+
+// Socket.IO connection handling
 io.on('connection', (socket) => {
   console.log(`Client connected: ${socket.id}`);
 
-  // Obsługa rozłączenia klienta
+  // Handling client disconnection
   socket.on('disconnect', () => {
     console.log(`Client disconnected: ${socket.id}`);
   });
 });
 
-// Trasy
+// Routes
 app.use('/api', productsRoutes);
 app.use('/api/orders', ordersRoutes);
 
@@ -48,18 +54,14 @@ app.use((req, res, next) => {
   next();
 });
 
-// Serve static files from the React app
+// Serving static files from the React app
 app.use(express.static(path.join(__dirname, '/client/build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
 
-io.on('connection', (socket) => {
-    console.log('New socket!');
-});
-
-// Nasłuchiwanie na porcie 8000
+// Listening on port 8000
 server.listen(port, () => {
-    console.log(`Server is running on port: ${port}`);
-  });
+  console.log(`Server is running on port: ${port}`);
+});
