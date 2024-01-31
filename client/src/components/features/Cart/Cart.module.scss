@@ -26,8 +26,8 @@
 .cartItem {
   padding: 10px;
   margin-bottom: 10px;
-  flex: 0 0 30%; /* Ustawienie szerokości elementu na około 30%, aby zmieścić trzy produkty w jednym wierszu */
-  box-sizing: border-box; /* Dostosowanie do modelu pudełkowego */
+  flex: 0 0 30%;
+  box-sizing: border-box;
 }
 
 .itemTitle {
@@ -77,7 +77,7 @@
   }
 }
 
-/* Style dla produktów w koszyku */
+/* Style dla produktów, których nie ma w koszyku */
 .cartItemsInCart {
   display: flex;
   justify-content: space-between;
@@ -87,7 +87,7 @@
 .cartItemInCart {
   padding: 10px;
   margin-bottom: 10px;
-  flex: 0 0 calc(33.3333% - 20px); /* Ustawienie szerokości na około 33.33% minus marginesy */
+  flex: 0 0 calc(33.3333% - 20px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -99,18 +99,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; // Dodano justify-content
-  height: 100%; // Nowy styl
+  justify-content: space-between;
+  height: 100%;
 }
 
 .itemControls {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between; // Dodano justify-content
+  justify-content: space-between;
   margin-top: 10px;
-  width: 100%; // Nowy styl
-  text-align: center; // Dodano text-align
+  width: 100%;
+  text-align: center;
 }
 
 .quantityAddButton {
@@ -120,7 +120,7 @@
   border-radius: 10px;
   font-weight: 500;
   margin: 0 5px;
-  display: inline-flex; /* Ustaw na inline-flex */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -140,7 +140,7 @@
   border-radius: 10px;
   font-weight: 500;
   margin: 0 5px;
-  display: inline-flex; /* Ustaw na inline-flex */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -163,7 +163,7 @@
   background-color: transparent;
   color: #000;
   padding: 8px 16px;
-  border: 1px solid #ddd; // Bardziej cienkie obramowanie
+  border: 1px solid #ddd;
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;

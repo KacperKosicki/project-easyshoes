@@ -1,8 +1,10 @@
 // Statute.js
 
+// Importy komponentów i stylów
 import React from 'react';
 import styles from './Statue.module.scss';
 
+// Komponent Statue.js
 const Statute = () => {
   return (
     <div className={styles.container}>

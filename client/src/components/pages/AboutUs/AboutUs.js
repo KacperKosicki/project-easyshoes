@@ -1,6 +1,10 @@
-import React from 'react';
-import styles from './AboutUs.module.scss'; // Załóż, że masz odpowiedni plik ze stylami
+// AboutUs.js
 
+// Importy komponentów i stylów
+import React from 'react';
+import styles from './AboutUs.module.scss';
+
+// Komponent AboutUs.js
 const AboutUs = () => {
   return (
     <div className={styles.aboutUsContainer}>

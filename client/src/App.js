@@ -1,3 +1,6 @@
+// App.js
+
+// Importy komponentów i stylów
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
@@ -12,6 +15,7 @@ import AboutUs from './components/pages/AboutUs/AboutUs';
 import PremiumProduct from './components/features/PremiumProduct/PremiumProduct';
 import FinallyOrder from './components/features/FinallyOrder/FinallyOrder';
 
+// Komponent App.js
 const App = () => {
   return (
     <Container>

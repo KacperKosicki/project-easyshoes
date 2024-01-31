@@ -1,33 +1,33 @@
 // Statute.module.scss
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
   
-  .wrapper {
-    max-width: 600px;
-    padding: 20px;
-    border: 1px solid #ddd; /* Obramowanie */
-    border-radius: 8px; /* Zaokrąglenie rogów */
-    background-color: #fff; /* Kolor tła */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.wrapper {
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
   
-  h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-  }
+h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
   
-  h3 {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
+h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
   
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-  }
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}

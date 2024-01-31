@@ -1,5 +1,6 @@
 // ProductList.js
 
+// Importy komponentów i modułów
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,23 +10,30 @@ import cx from 'classnames'; // Dodane importowane cx
 
 import styles from './ProductList.module.scss'; // Dodane importowane stylów
 
+// Komponent ProductList.js
 const ProductList = () => {
+  // Użycie funkcji useDispatch do wywoływania akcji Redux
   const dispatch = useDispatch();
 
+  // Stany produktów, wyfiltrowanych produktów, typu sortowania, typu filtracji i wyszukiwania
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortType, setSortType] = useState('default');
   const [filterType, setFilterType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
 
+  // Hook nawigacji
   const navigate = useNavigate();
+  // Stany dla powiadomień
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
 
+  // Funkcja zamykająca powiadomienie
   const closeNotification = () => {
     setShowNotification(false);
   };
 
+  // Efekt pobierający dane produktów z serwera przy załadowaniu komponentu
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -39,6 +47,7 @@ const ProductList = () => {
     fetchData();
   }, []);
 
+  // Efekt filtrujący produkty na podstawie sortowania, filtracji i wyszukiwania
   useEffect(() => {
     let filtered = [...products];
 
@@ -67,18 +76,22 @@ const ProductList = () => {
     setFilteredProducts(filtered);
   }, [sortType, filterType, searchTerm, products]);
 
+  // Obsługa zmiany sortowania
   const handleSortChange = (e) => {
     setSortType(e.target.value);
   };
 
+  // Obsługa zmiany filtracji po płci
   const handleFilterChange = (e) => {
     setFilterType(e.target.value);
   };
 
+  // Obsługa zmiany wyszukiwania
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
+  // Obsługa kliknięcia na produkt
   const handleProductClick = (product) => {
     if (product.available) {
       navigate(`/product/${product._id}`);
@@ -88,6 +101,7 @@ const ProductList = () => {
     }
   };
 
+  // Zwracany JSX komponentu ProductList
   return (
     <div className={styles.mainContainer}>
       <Notification show={showNotification} handleClose={closeNotification} message={notificationMessage} />

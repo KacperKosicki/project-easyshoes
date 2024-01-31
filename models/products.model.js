@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 
+// Definicja schematu dla produktów
 const productSchema = new mongoose.Schema({
   title: String,
   description: String,
@@ -15,6 +16,7 @@ const productSchema = new mongoose.Schema({
   },
 });
 
+// Utwórz model na podstawie schematu
 const Product = mongoose.model('Product', productSchema);
 
 module.exports = Product;

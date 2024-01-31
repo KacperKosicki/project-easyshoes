@@ -1,8 +1,10 @@
 // store.js
-import { createStore, applyMiddleware } from 'redux';
-import { thunk } from 'redux-thunk'; // Zmień import na * as thunk
 
-import productReducer from './productRedux'; // Załóżmy, że plik productRedux.js jest w tym samym katalogu
+// Importy komponentów i stylów
+import { createStore, applyMiddleware } from 'redux';
+import { thunk } from 'redux-thunk';
+
+import productReducer from './productRedux';
 
 console.log(thunk.de);
 

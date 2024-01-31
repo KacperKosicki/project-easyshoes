@@ -1,9 +1,11 @@
 // Footer.js
 
+// Importy komponentów i stylów
 import React from 'react';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import styles from './Footer.module.scss';
 
+// Komponent Footer.js
 const Footer = () => {
   return (
     <footer className={styles.footer}>

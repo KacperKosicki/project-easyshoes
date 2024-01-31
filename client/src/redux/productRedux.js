@@ -1,3 +1,6 @@
+// productRedux.js
+
+// Imports
 import axios from 'axios';
 
 // Action Types
@@ -5,19 +8,19 @@ export const ADD_TO_CART = 'ADD_TO_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
-export const SELECT_SIZE = 'SELECT_SIZE';  // Dodaj nowy typ akcji
+export const SELECT_SIZE = 'SELECT_SIZE';
 
 // Initial State
 const initialState = {
   cartItems: [],
-  selectedSize: null,  // Dodaj nowy stan dla wybranego rozmiaru
+  selectedSize: null,
 };
 
 // Reducer
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const newItem = { ...action.payload, size: state.selectedSize };  // Dodaj wybrany rozmiar do nowego elementu
+      const newItem = { ...action.payload, size: state.selectedSize };
       const existingItem = state.cartItems.find(item => item.id === newItem.id);
 
       if (existingItem) {
@@ -56,7 +59,7 @@ const productReducer = (state = initialState, action) => {
         ),
       };
 
-    case SELECT_SIZE:  // Obsłuż nowy typ akcji dla wybranego rozmiaru
+    case SELECT_SIZE:
       return {
         ...state,
         selectedSize: action.payload,
@@ -87,7 +90,7 @@ export const updateQuantity = (data) => ({
   payload: data,
 });
 
-export const selectSize = (size) => ({  // Dodaj nowego kreatora akcji dla wybranego rozmiaru
+export const selectSize = (size) => ({
   type: SELECT_SIZE,
   payload: size,
 });
@@ -100,7 +103,6 @@ export const fetchProduct = (productId) => async (dispatch) => {
     dispatch(addToCart(product));
   } catch (error) {
     console.error(error);
-    // Obsłuż błąd pobierania produktu
   }
 };
 

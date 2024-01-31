@@ -3,41 +3,40 @@
 .navbar {
   background-color: #333;
   padding: 10px;
-  border-radius: 0 0 10px 10px; /* Zaokrąglone dolne boki */
+  border-radius: 0 0 10px 10px;
   margin-bottom: 40px;
 }
 
 .navList {
   list-style-type: none;
   display: flex;
-  justify-content: center; /* Zmienione na center, aby linki były na środku */
+  justify-content: center;
   padding: 0;
 }
 
 .navItem {
   margin: 0;
-  padding: 0 10px; /* Dodany odstęp między linkami */
+  padding: 0 10px;
 }
 
 .activeLink {
   color: #fff;
   font-weight: bold;
-  text-decoration: underline; /* Dodane podkreślenie dla aktywnego linku */
+  text-decoration: underline;
 }
 
 .navItem:hover a {
-  color: #ddd; /* Zmiana koloru linku podczas najechania myszką */
+  color: #ddd;
 }
 
-/* Nowe style dla linków */
 .navItem a {
   color: #fff;
   font-weight: bold;
-  text-decoration: none; /* Usunięcie domyślnego podkreślenia dla linków */
+  text-decoration: none;
 }
 
 .navItem a:hover {
-  color: #ddd; /* Zmiana koloru linku podczas najechania myszką */
+  color: #ddd;
 }
 
 .cartItemCount {

@@ -1,4 +1,5 @@
 // db.js
+
 const db = {
     products: [
     {

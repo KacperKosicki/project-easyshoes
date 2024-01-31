@@ -1,29 +1,33 @@
 // FinallyOrder.js
 
+// Importy komponentów i modułów
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import { clearCart } from '../../../redux/productRedux'; // Importujemy akcję clearCart
-import { useNavigate } from 'react-router-dom'; // Importujemy useNavigate
-import 'bootstrap/dist/css/bootstrap.min.css'; // Importujemy styl Bootstrapa
+import { clearCart } from '../../../redux/productRedux';
+import { useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './FinallyOrder.module.scss';
 
-import styles from './FinallyOrder.module.scss'; // Importujemy style
-
+// Komponent FinallyOrder.js
 const FinallyOrder = () => {
-  const [showModal, setShowModal] = useState(false); // Stan do wyświetlania modala
+  // Stan do wyświetlania modala
+  const [showModal, setShowModal] = useState(false);
+  // Selekcja stanu koszyka i wybranego rozmiaru
   const cartItems = useSelector((state) => state.cartItems);
   const selectedSize = useSelector((state) => state.selectedSize);
-  const dispatch = useDispatch(); // Używamy funkcji useDispatch
-  const navigate = useNavigate(); // Używamy useNavigate do nawigacji
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  // Efekt sprawdzający, czy koszyk jest pusty
   useEffect(() => {
-    // Sprawdź, czy koszyk jest pusty
+    // Jeśli koszyk jest pusty, przekieruj użytkownika do strony głównej
     if (cartItems.length === 0) {
-      // Jeśli koszyk jest pusty, przekieruj użytkownika do strony głównej
       navigate('/');
     }
   }, [cartItems, navigate]);
 
+  // Funkcja wysyłająca zamówienie na serwer
   const sendOrderToServer = async () => {
     try {
       const orderData = {
@@ -35,7 +39,7 @@ const FinallyOrder = () => {
       console.log('Zamówienie zostało wysłane na serwer:', response.data);
 
       // Po udanym wysłaniu zamówienia czyszczymy koszyk za pomocą akcji clearCart
-      dispatch(clearCart()); // Wywołujemy akcję clearCart
+      dispatch(clearCart());
 
       // Po złożeniu zamówienia przechodzimy na stronę główną
       navigate('/');
@@ -44,14 +48,17 @@ const FinallyOrder = () => {
     }
   };
 
+  // Obsługa kliknięcia przycisku "Złóż zamówienie"
   const handleOrderButtonClick = () => {
-    setShowModal(true); // Wyświetlenie modala po kliknięciu przycisku "Złóż zamówienie"
+    setShowModal(true);
   };
 
+  // Obsługa zamknięcia modala
   const handleModalClose = () => {
-    setShowModal(false); // Ukrycie modala po zamknięciu
+    setShowModal(false);
   };
 
+  // Zwracany JSX komponentu FinallyOrder
   return (
     <div className={styles.finallyOrderContainer}>
       <h2 className={styles.submitOrder}>Podsumowanie zamówienia</h2>
@@ -68,7 +75,6 @@ const FinallyOrder = () => {
         ))}
       </ul>
       <button className={styles.orderButton} onClick={handleOrderButtonClick}>ZŁÓŻ ZAMÓWIENIE</button>
-  
       {/* Modal */}
       {showModal && (
         <div className="modal" tabIndex="-1" role="dialog" style={{ display: 'block' }}>

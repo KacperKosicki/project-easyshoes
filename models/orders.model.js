@@ -12,8 +12,8 @@ const orderSchema = new mongoose.Schema({
       quantity: { type: Number, required: true }
     }
   ],
-  selectedSize: { type: String }, // Rozmiar wybrany przez użytkownika
-  createdAt: { type: Date, default: Date.now } // Data utworzenia zamówienia
+  selectedSize: { type: String },
+  createdAt: { type: Date, default: Date.now }
 });
 
 // Utwórz model na podstawie schematu

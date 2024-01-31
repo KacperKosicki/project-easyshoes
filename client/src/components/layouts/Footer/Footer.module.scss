@@ -9,7 +9,7 @@
   bottom: 0;
   width: 100%;
   margin-top: 40px;
-  border-radius: 10px 10px 0 0; /* Zaokrąglone dolne boki */
+  border-radius: 10px 10px 0 0;
 }
 
 .socialIcons {
@@ -73,15 +73,15 @@
 }
 
 .footerSection ul li.comingSoon {
-  pointer-events: none; /* Blokowanie interakcji dla elementów z tą klasą */
+  pointer-events: none;
 }
 
 .footerSection ul li.comingSoon:hover {
-  cursor: not-allowed; /* Zmiana kształtu kursora na "not allowed" po najechaniu */
+  cursor: not-allowed;
 }
 
 .footerSection .comingSoon {
-  color: gray; /* Kolor czerwony */
+  color: gray;
   font-size: 14px;
   margin-left: 5px;
 }

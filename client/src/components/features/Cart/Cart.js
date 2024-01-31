@@ -1,18 +1,26 @@
+// Cart.js
+
+// Importy komponentów i modułów
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styles from './Cart.module.scss'; // Importuj style
+import styles from './Cart.module.scss';
 import { removeFromCart, updateQuantity } from '../../../redux/productRedux';
 import { Link } from 'react-router-dom';
 
+// Komponent Cart.js
 const Cart = () => {
+  // Stałe związane z koszykiem i rozmiarem wybranym przez użytkownika
   const cartItems = useSelector((state) => state.cartItems);
   const selectedSize = useSelector((state) => state.selectedSize);
   const dispatch = useDispatch();
 
+  // Sprawdzenie, czy koszyk jest pusty
   const isCartEmpty = cartItems.length === 0;
 
+  // Stan przechowujący losowe produkty
   const [randomProducts, setRandomProducts] = useState([]);
 
+  // Efekt pobierający losowe produkty z serwera, gdy koszyk jest pusty
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -37,6 +45,7 @@ const Cart = () => {
     }
   }, [isCartEmpty]);
 
+  // Funkcje obsługujące usuwanie, zwiększanie i zmniejszanie ilości produktów w koszyku
   const handleRemoveItem = (itemId) => {
     dispatch(removeFromCart(itemId));
   };
@@ -56,6 +65,7 @@ const Cart = () => {
     }
   };
 
+  // Funkcja obliczająca łączną ilość i cenę produktów w koszyku
   const calculateTotal = () => {
     const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
     const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -65,6 +75,7 @@ const Cart = () => {
 
   const { totalQuantity, totalPrice } = calculateTotal();
 
+  // Zwracany JSX komponentu Cart
   return (
     <div className={styles.cartContainer}>
       <h2 className={styles.cartHeader}>Twój koszyk</h2>

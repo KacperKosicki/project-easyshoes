@@ -1,3 +1,6 @@
+// Product.js
+
+// Importy komponentów i modułów
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
@@ -8,27 +11,34 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, selectSize } from '../../../redux/productRedux';
 import Notification from '../Notification/Notification';
 
+// Komponent Product.js
 const Product = () => {
+  // Parametry routingu
   const { id } = useParams();
+  // Stany produktu, wybranego rozmiaru oraz stanu powiadomienia
   const [product, setProduct] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
-
-  const dispatch = useDispatch();
-  const selectedSizeRedux = useSelector(state => state.selectedSize);
-  const cartItems = useSelector(state => state.cartItems);
-
   const [showNotification, setShowNotification] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
 
+  // Użycie funkcji useDispatch do wywoływania akcji Redux
+  const dispatch = useDispatch();
+  // Selektory stanu Redux
+  const selectedSizeRedux = useSelector(state => state.selectedSize);
+  const cartItems = useSelector(state => state.cartItems);
+
+  // Funkcja zamykająca powiadomienie
   const closeNotification = () => {
     setShowNotification(false);
   };
 
+  // Obsługa kliknięcia na rozmiar
   const handleSizeClick = (size) => {
     setSelectedSize(size);
     dispatch(selectSize(size));  // Aktualizuj stan Redux z wybranym rozmiarem
   };
 
+  // Obsługa dodawania produktu do koszyka
   const handleAddToCart = () => {
     if (!selectedSize) {
       // Jeśli nie wybrano rozmiaru, wyświetl komunikat
@@ -68,6 +78,7 @@ const Product = () => {
     }
   };
 
+  // Efekt pobierający dane produktu z serwera przy załadowaniu komponentu
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -81,23 +92,27 @@ const Product = () => {
     fetchProduct();
   }, [id]);
 
+  // Efekt ustawiający wybrany rozmiar z Redux, jeśli istnieje
   useEffect(() => {
-    // Ustaw wybrany rozmiar z Redux, jeśli istnieje
     if (selectedSizeRedux) {
       setSelectedSize(selectedSizeRedux);
     }
   }, [selectedSizeRedux]);
 
+  // Warunek wyświetlający brak produktu o podanym identyfikatorze
   if (!product) {
     return <div className={styles.noSearch}>Nie znaleziono produktu o podanym identyfikatorze.</div>;
   }
 
+  // Warunek wyświetlający brak dostępnych zdjęć produktu
   if (!product.carouselImages || !Array.isArray(product.carouselImages) || product.carouselImages.length === 0) {
     return <div className={styles.noSearch}>Brak dostępnych zdjęć produktu.</div>;
   }
 
+  // Dostępne rozmiary produktu
   const availableSizes = product.sizeChart?.EU || [];
 
+  // Zwracany JSX komponentu Product
   return (
     <div className={styles.productContainer}>
       <Carousel showArrows={true} dynamicHeight={true}>

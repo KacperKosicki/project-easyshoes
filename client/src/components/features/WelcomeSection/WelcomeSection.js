@@ -1,9 +1,11 @@
 // WelcomeSection.js
 
+// Importy komponentów i stylów
 import React from 'react';
 import styles from './WelcomeSection.module.scss';
 import { Link } from 'react-router-dom';
 
+// Komponent WelcomeSection.js
 const WelcomeSection = () => {
   return (
     <div className={styles.welcomeSection}>
