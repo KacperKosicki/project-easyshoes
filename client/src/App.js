@@ -14,6 +14,7 @@ import Statute from './components/pages/Statue/Statue';
 import AboutUs from './components/pages/AboutUs/AboutUs';
 import PremiumProduct from './components/features/PremiumProduct/PremiumProduct';
 import FinallyOrder from './components/features/FinallyOrder/FinallyOrder';
+import PrivacyPolicy from './components/pages/PrivacyPolicy/PrivacyPolicy';
 
 // Komponent App.js
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/statue" element={<Statute />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
       <Footer />
     </Container>

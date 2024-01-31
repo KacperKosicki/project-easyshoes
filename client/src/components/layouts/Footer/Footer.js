@@ -34,7 +34,7 @@ const Footer = () => {
               <a href="/statue">Regulamin</a>
             </li>
             <li>
-              <a href="/polityka-prywatnosci">Polityka prywatności</a>
+              <a href="/privacy-policy">Polityka prywatności</a>
             </li>
           </ul>
         </div>
