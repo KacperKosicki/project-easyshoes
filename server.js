@@ -19,7 +19,11 @@ app.use(express.json());
 const port = process.env.PORT || 8000;
 
 // Connection to the database
-mongoose.connect('mongodb://localhost:27017/products', { useNewUrlParser: true, useUnifiedTopology: true });
+// Połączenie z bazą danych
+mongoose.connect('mongodb+srv://kosickikacper1:1OaQvJk7zFG57Nfm@cluster0.b2vomcn.mongodb.net/products?retryWrites=true&w=majority', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 const db = mongoose.connection;
 
