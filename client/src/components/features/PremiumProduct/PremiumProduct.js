@@ -16,7 +16,6 @@ const PremiumProduct = () => {
   const [sortType, setSortType] = useState('default');
   const [filterType, setFilterType] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-
   const navigate = useNavigate(); // Używamy hooka useNavigate do nawigacji
   const [showNotification, setShowNotification] = useState(false); // Stan do wyświetlania powiadomień
   const [notificationMessage, setNotificationMessage] = useState(''); // Wiadomość powiadomienia
