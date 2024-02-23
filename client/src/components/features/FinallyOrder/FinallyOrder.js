@@ -35,7 +35,7 @@ const FinallyOrder = () => {
         selectedSize: selectedSize,
       };
 
-      const response = await axios.post('/api/orders', orderData);
+      const response = await axios.post('http://localhost:8000/api/orders', orderData);
       console.log('Zamówienie zostało wysłane na serwer:', response.data);
 
       // Po udanym wysłaniu zamówienia czyszczymy koszyk za pomocą akcji clearCart

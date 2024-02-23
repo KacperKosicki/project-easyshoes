@@ -24,7 +24,7 @@ const Cart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/api/products');
+        const response = await fetch('http://localhost:8000/api/products');
         const data = await response.json();
         // Filtruj produkty, aby wyłączyć te niedostępne
         const availableProducts = data.filter(product => product.available);

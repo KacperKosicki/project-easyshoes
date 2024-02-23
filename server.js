@@ -61,7 +61,6 @@ app.use((req, res, next) => {
 // Serving static files from the React app
 app.use(express.static(path.join(__dirname, '/client/build')));
 
-// Route handling for any request - send index.html
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/build/index.html'));
 });
