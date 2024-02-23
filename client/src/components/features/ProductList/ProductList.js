@@ -37,14 +37,13 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/products');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/products`);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
-    fetchData();
+  fetchData();
   }, []);
 
   // Efekt filtrujący produkty na podstawie sortowania, filtracji i wyszukiwania
