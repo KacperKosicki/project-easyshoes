@@ -17,7 +17,9 @@ const Home = () => {
         <ProductList />
       </div>
       <img className={styles.roundedImage} src="/images/inne/banner-premium.png" alt="Banner" width="100%" height="auto" />
-      <PremiumProduct />
+      <div className={styles.productsContainer}>
+        <PremiumProduct />
+      </div>
     </div>
   );
 };
