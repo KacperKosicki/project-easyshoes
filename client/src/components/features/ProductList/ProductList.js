@@ -33,17 +33,17 @@ const ProductList = () => {
     setShowNotification(false);
   };
 
-  // Efekt pobierający dane produktów z serwera przy załadowaniu komponentu
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/products`);
+        const response = await axios.get('/api/products'); // Zmiana adresu URL
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-  fetchData();
+  
+    fetchData();
   }, []);
 
   // Efekt filtrujący produkty na podstawie sortowania, filtracji i wyszukiwania
