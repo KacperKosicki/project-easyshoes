@@ -20,7 +20,7 @@ const port = process.env.PORT || 8000;
 
 // Connection to the database
 // Połączenie z bazą danych
-mongoose.connect(process.env.MONGODB_URI, {
+mongoose.connect('mongodb+srv://kosickikacper1:1OaQvJk7zFG57Nfm@cluster0.b2vomcn.mongodb.net/products?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
