@@ -25,7 +25,7 @@ const PremiumProduct = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/products');
+        const response = await axios.get('/api/products');
         const premiumProducts = response.data.filter(product => product.premium);
         setPremiumProducts(premiumProducts);
         setFilteredPremiumProducts(premiumProducts);
