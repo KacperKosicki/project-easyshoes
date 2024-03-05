@@ -7,3 +7,13 @@
   width: 300px;
   z-index: 9999;
 }
+
+// Media
+@media only screen and (max-width: 768px) {
+  .notification {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px;
+  }
+}

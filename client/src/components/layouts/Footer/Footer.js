@@ -52,7 +52,7 @@ const Footer = () => {
           <h3>Sklep</h3>
           <ul>
             <li>
-              <a href="/">Produkty</a>
+              <a href="/">Buty</a>
             </li>
             <li className={styles.comingSoon}>
               <a href="/kategorie/akcesoria">Akcesoria</a> <span className={styles.comingSoonText}>Już niedługo...</span>

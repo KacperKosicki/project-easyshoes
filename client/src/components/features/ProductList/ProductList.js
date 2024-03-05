@@ -36,7 +36,8 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/api/products'); // Zmiana adresu URL
+        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/products';
+        const response = await axios.get(apiUrl);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
