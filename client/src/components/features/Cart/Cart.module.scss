@@ -64,7 +64,7 @@
 .seeProduct {
   width: 100%;
   background-color: transparent;
-  color: #000;
+  color: green;
   padding: 8px 16px;
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -73,11 +73,12 @@
   font-weight: 500;
   display: inline-block;
   margin-top: 10px;
+  border-color: #28a745;
+  transition: background-color 0.3s, color 0.3s;
 
   &:hover {
-    background-color: transparent;
-    border-color: #4caf50;
-    color: black;
+    background-color: #4caf50;
+    color: white;
   }
 }
 
