@@ -36,7 +36,7 @@ const ProductList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8000/api/products';
+        const apiUrl = process.env.NODE_ENV === 'development' ? process.env.REACT_APP_LOCAL_API_URL : process.env.REACT_APP_RENDER_API_URL;
         const response = await axios.get(apiUrl);
         setProducts(response.data);
       } catch (error) {
