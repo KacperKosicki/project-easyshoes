@@ -16,7 +16,7 @@ const productsRoutes = require('./routes/products.routes');
 const ordersRoutes = require('./routes/orders.routes')(io);
 
 app.use(express.json());
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 
 // Connection to the database
 // Połączenie z bazą danych
